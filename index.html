@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Hoàng Nhung – Giọng đọc nữ chuyên nghiệp</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&amp;family=Merriweather:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#004d40", // Deep Teal
+              secondary: "#c5a773", // Warm Gold
+              "background-light": "#F8F8F8",
+              "background-dark": "#1a1a1a",
+              "text-light": "#333333",
+              "text-dark": "#EAEAEA",
+              "card-light": "#FFFFFF",
+              "card-dark": "#2C2C2C",
+            },
+            fontFamily: {
+              display: ["Montserrat", "sans-serif"],
+              body: ["Merriweather", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark antialiased"
+  >
+    <div class="relative flex min-h-screen w-full flex-col">
+      <header
+        class="sticky top-0 z-50 flex items-center justify-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700"
+      >
+        <div
+          class="flex items-center justify-between w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-3"
+        >
+          <a class="flex items-center gap-3" href="#">
+            <span class="text-primary text-2xl material-symbols-outlined"
+              >mic</span
+            >
+            <h2
+              id="brand-name"
+              class="font-display text-lg font-bold text-primary tracking-tight"
+            ></h2>
+          </a>
+          <nav id="nav-links" class="hidden md:flex items-center gap-8">
+            <!-- Nav links will be injected here -->
+          </nav>
+          <a
+            class="nav-cta hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors duration-300 font-display"
+            href="#contact"
+          >
+            <span></span>
+          </a>
+        </div>
+      </header>
+      <main class="flex-grow">
+        <section
+          class="w-full py-16 md:py-24 lg:py-32 fade-in-section"
+          id="home"
+        >
+          <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div class="flex flex-col gap-6 text-center md:text-left">
+                <div class="flex flex-col gap-2">
+                  <h1
+                    id="hero-title"
+                    class="font-display text-4xl font-black tracking-tight text-text-light dark:text-text-dark md:text-5xl lg:text-6xl"
+                  ></h1>
+                  <p
+                    id="hero-subtitle"
+                    class="font-body text-lg text-text-light/80 dark:text-text-dark/80"
+                  ></p>
+                </div>
+                <div
+                  class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
+                >
+                  <a
+                    id="hero-primary-cta"
+                    class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors duration-300 font-display"
+                    href="#"
+                  >
+                    <span></span>
+                  </a>
+                  <a
+                    id="hero-secondary-cta"
+                    class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-secondary text-primary font-bold leading-normal tracking-wide hover:bg-secondary/90 transition-colors duration-300 font-display"
+                    href="#"
+                  >
+                    <span></span>
+                  </a>
+                </div>
+              </div>
+              <div class="flex justify-center">
+                <div
+                  id="hero-profile-img"
+                  class="w-full max-w-sm aspect-square bg-center bg-no-repeat bg-cover rounded-full shadow-lg"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="w-full py-16 md:py-24 bg-card-light dark:bg-card-dark fade-in-section"
+          id="demos"
+        >
+          <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+              <h2
+                id="demos-title"
+                class="font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl"
+              ></h2>
+              <p
+                id="demos-desc"
+                class="mt-4 text-lg text-text-light/80 dark:text-text-dark/80 font-body"
+              ></p>
+            </div>
+            <div
+              id="demo-categories"
+              class="flex justify-center gap-3 p-3 flex-wrap mb-8"
+            >
+              <!-- Categories injected here -->
+            </div>
+            <div
+              id="demo-items"
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              <!-- Items injected here -->
+            </div>
+          </div>
+        </section>
+        <section class="w-full py-16 md:py-24 fade-in-section" id="about">
+          <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+              <div class="md:col-span-2">
+                <div
+                  id="about-img"
+                  class="w-full aspect-[4/5] bg-center bg-no-repeat bg-cover rounded-xl shadow-lg"
+                ></div>
+              </div>
+              <div class="md:col-span-3 flex flex-col gap-6">
+                <h2
+                  id="about-title"
+                  class="font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl"
+                ></h2>
+                <p
+                  id="about-desc"
+                  class="font-body text-lg text-text-light/90 dark:text-text-dark/90 leading-relaxed"
+                ></p>
+                <div id="about-features" class="grid grid-cols-2 gap-4">
+                  <!-- Features injected here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="w-full py-16 md:py-24 bg-card-light dark:bg-card-dark fade-in-section"
+          id="contact"
+        >
+          <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+              <h2
+                id="contact-title"
+                class="font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl"
+              ></h2>
+              <p
+                id="contact-desc"
+                class="mt-4 text-lg text-text-light/80 dark:text-text-dark/80 font-body"
+              ></p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Email -->
+              <a
+                id="contact-email"
+                class="flex flex-col items-center justify-center p-8 bg-background-light dark:bg-background-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1 border border-transparent hover:border-primary/20"
+                href="#"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-primary text-3xl"
+                    >mail</span
+                  >
+                </div>
+                <h3
+                  class="font-display font-bold text-lg text-text-light dark:text-text-dark mb-2"
+                >
+                  Email
+                </h3>
+                <span
+                  id="contact-email-text"
+                  class="text-sm text-text-light/70 dark:text-text-dark/70 text-center break-all"
+                ></span>
+              </a>
+
+              <!-- Zalo -->
+              <a
+                id="contact-zalo"
+                class="flex flex-col items-center justify-center p-8 bg-background-light dark:bg-background-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1 border border-transparent hover:border-primary/20"
+                href="#"
+                target="_blank"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors"
+                >
+                  <img
+                    class="h-8 w-8"
+                    src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+                    alt="Zalo"
+                  />
+                </div>
+                <h3
+                  class="font-display font-bold text-lg text-text-light dark:text-text-dark mb-2"
+                >
+                  Zalo
+                </h3>
+                <span class="text-sm text-text-light/70 dark:text-text-dark/70"
+                  >Chat ngay</span
+                >
+              </a>
+
+              <!-- Facebook -->
+              <a
+                id="contact-facebook"
+                class="flex flex-col items-center justify-center p-8 bg-background-light dark:bg-background-dark rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1 border border-transparent hover:border-primary/20"
+                href="#"
+                target="_blank"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-blue-600/10 flex items-center justify-center mb-4 group-hover:bg-blue-600/20 transition-colors"
+                >
+                  <img
+                    class="h-8 w-8"
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                    alt="Facebook"
+                  />
+                </div>
+                <h3
+                  class="font-display font-bold text-lg text-text-light dark:text-text-dark mb-2"
+                >
+                  Facebook
+                </h3>
+                <span class="text-sm text-text-light/70 dark:text-text-dark/70"
+                  >Kết nối</span
+                >
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="w-full py-6 border-t border-gray-200 dark:border-gray-700">
+        <div
+          class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center text-sm text-text-light/70 dark:text-text-dark/70"
+        >
+          <p id="footer-text"></p>
+        </div>
+      </footer>
+      <button
+        class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:bg-primary/90 transition-colors duration-300 z-40"
+      >
+        <span class="material-symbols-outlined text-3xl">chat</span>
+      </button>
+    </div>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

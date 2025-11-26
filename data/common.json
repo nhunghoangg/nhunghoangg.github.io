@@ -1,0 +1,11 @@
+{
+  "siteTitle": "Hoàng Nhung – Giọng đọc nữ chuyên nghiệp",
+  "name": "Hoàng Nhung",
+  "nav": [
+    { "label": "Demo", "href": "#demos" },
+    { "label": "Giới thiệu", "href": "#about" },
+    { "label": "Liên hệ", "href": "#contact" }
+  ],
+  "cta": { "label": "Liên Hệ Đặt Lịch", "href": "#contact" },
+  "footer": "© 2025 Hoàng Nhung. All rights reserved."
+}
