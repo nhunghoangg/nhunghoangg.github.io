@@ -3,29 +3,27 @@
   "description": "Lắng nghe chất lượng và sự linh hoạt trong giọng đọc của tôi qua các phong cách khác nhau.",
   "categories": [
     "TVC",
+    "Thuyết Minh",
     "Bất Động Sản",
-    "Thuyết Minh Doanh Nghiệp",
     "Kể Chuyện",
     "E-learning"
   ],
   "items": [
     {
-      "title": "Demo TVC",
+      "title": "Demo Video TVC",
       "category": "TVC",
-      "description": "Tông giọng cảm xúc, hiện đại, hoàn hảo cho các thương hiệu cao cấp.",
-      "thumbnail": "https://lh3.googleusercontent.com/aida-public/AB6AXuBSclxEQrSmfi3qCEdsMWocaS_saHwZhQ6yrAV313zbWiv3FJ0Amt5DTFNGgAWd7vHUeHY5r0GgT7bBm52JEZ-NaxRndRBWQtaUkLhWL26Y23_1EgRXbbF3To9KXXMrTmWmPgm_j6SrdywicsbcSgyrtjwaGZjv-5QK1cjlc2ISnzDRy8deBd5_Oep0HwmWj6tT_K8RkPiix6w5sd0sAAK-VELxUrt6-zimjeSZJTn-mHRDLOxg0cDrCqXjorURHtKQ6foX7m_lJjg"
+      "description": "Mẫu giọng đọc TVC chuyên nghiệp.",
+      "thumbnail": "assets/default_thumbnail_video.png",
+      "embedUrl": "https://drive.google.com/file/d/1prPYWJxJISBXU81psI7nRT56RvIZtwcD/preview",
+      "type": "video"
     },
     {
-      "title": "Demo Bất Động Sản",
-      "category": "Bất Động Sản",
-      "description": "Giọng đọc sang trọng và đáng tin cậy cho các dự án bất động sản.",
-      "thumbnail": "https://lh3.googleusercontent.com/aida-public/AB6AXuDBO6cFOzQ_Y1z5MFLpGR-riG5RFJJSntQ5e857KcjAAXWYNYeACrGK1GaPFQCx49aZSHxHrz-lkzY0XjdCzaVoOrBNqnJvwH_PydEk-HW4n5Q-TQH3UJZs9nfCX69__pHlBmT8PF1n1_y1OPePr_dDxzyb1ITP-dH9MpVYb4XEYNrFnlOlMDZXnr94A8LIEh8o31YAoKDafChLAyXbvKeWRhck8TWKBiHroJzl0PkvWPLAuhJmcGAWLcI8jkA16MQBaXgYH2wjNgzRu0"
-    },
-    {
-      "title": "Demo Kể Chuyện",
-      "category": "Kể Chuyện",
-      "description": "Giọng đọc ấm áp, lôi cuốn cho những câu chuyện hấp dẫn.",
-      "thumbnail": "https://lh3.googleusercontent.com/aida-public/AB6AXuDMw_bpIijks2Uyeq62JNg9KWMu9o93Jphvi3UWCEhrbqowPc2AO3n3CYkVI_r7TFUfn9qVICtXJAslBsyv8Q5QfsJmxiff8X6CE_Lb6MzkTCbQu8lyAF-LqiXRyXqCSgO9em2vUkA3VSgZy3qwmt6m34ypJhKShIcpks1BFps8rfe8EKMP2-hio3hfxOUsxMpbXGZHa-t9PyB80f01v5_6x7rvL8FMsm_nLkMiSkTGPiJb3Kf6bK-sZQOyyB2U9psJ-30qsNgzRu0"
+      "title": "Demo Giọng Đọc",
+      "category": "Thuyết Minh",
+      "description": "Mẫu giọng đọc thuyết minh truyền cảm.",
+      "thumbnail": "assets/default_thumbnail_audio.png",
+      "embedUrl": "https://drive.google.com/file/d/1K_fl1jFgKMzRWdArVcv_RgDyScVlMBAm/preview",
+      "type": "audio"
     }
   ]
 }

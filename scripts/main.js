@@ -147,9 +147,14 @@ async function loadDemos() {
         .map(
           (item) =>
             `<div class="flex flex-col gap-4 bg-background-light dark:bg-background-dark p-4 rounded-xl shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div class="relative w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Thumbnail for ${item.title}" style='background-image: url("${item.thumbnail}");'>
+                    <div class="media-container relative w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden" data-alt="Thumbnail for ${item.title}" style='background-image: url("${item.thumbnail}");'>
                         <div class="absolute inset-0 bg-black/30 flex items-center justify-center group">
-                            <button class="w-16 h-16 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-white group-hover:bg-white/50 transition-colors duration-300">
+                            <button class="play-btn w-16 h-16 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-white group-hover:bg-white/50 transition-colors duration-300" 
+                                    data-embed="${item.embedUrl}" 
+                                    data-type="${item.type}"
+                                    data-title="${item.title}"
+                                    data-desc="${item.description}"
+                                    data-thumbnail="${item.thumbnail}">
                                 <span class="material-symbols-outlined text-4xl">play_arrow</span>
                             </button>
                         </div>
@@ -161,11 +166,103 @@ async function loadDemos() {
                 </div>`
         )
         .join("");
+
+      // Add click listeners for play buttons
+      itemsContainer.querySelectorAll(".play-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const embedUrl = btn.dataset.embed;
+          const type = btn.dataset.type;
+          const title = btn.dataset.title;
+          const desc = btn.dataset.desc;
+          const thumbnail = btn.dataset.thumbnail;
+
+          if (embedUrl) {
+            openModal(embedUrl, type, title, desc, thumbnail);
+          }
+        });
+      });
     }
   }
 
   renderCategories();
   renderItems();
+  setupModal();
+}
+
+function setupModal() {
+  const modal = document.getElementById("media-modal");
+  const closeBtn = document.getElementById("close-modal");
+  const iframeContainer = document.getElementById("modal-iframe-container");
+  const modalContent = document.getElementById("modal-content");
+
+  if (!modal || !closeBtn || !iframeContainer) return;
+
+  const closeModal = () => {
+    modal.classList.add("opacity-0");
+    modalContent.classList.add("scale-95");
+
+    // Stop audio if playing
+    const audio = iframeContainer.querySelector("audio");
+    if (audio) {
+      audio.pause();
+      audio.src = "";
+    }
+
+    setTimeout(() => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      iframeContainer.innerHTML = ""; // Clear content
+
+      // Reset modal styles for next open (default to video aspect)
+      modalContent.classList.remove(
+        "max-w-md",
+        "aspect-auto",
+        "bg-white",
+        "dark:bg-gray-900"
+      );
+      modalContent.classList.add("max-w-4xl", "aspect-video", "bg-black");
+    }, 300);
+  };
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  });
+}
+
+function openModal(embedUrl, type, title, desc, thumbnail) {
+  const modal = document.getElementById("media-modal");
+  const iframeContainer = document.getElementById("modal-iframe-container");
+  const modalContent = document.getElementById("modal-content");
+
+  if (!modal || !iframeContainer) return;
+
+  if (type === "audio") {
+    modalContent.classList.add("max-w-md", "aspect-auto", "bg-white", "dark:bg-gray-900");
+    modalContent.classList.remove("max-w-4xl", "aspect-video", "bg-black");
+  } else {
+    modalContent.classList.add("max-w-4xl", "aspect-video", "bg-black");
+    modalContent.classList.remove("max-w-md", "aspect-auto", "bg-white", "dark:bg-gray-900");
+  }
+
+  iframeContainer.innerHTML = `<iframe src="${embedUrl}" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+  setTimeout(() => {
+    modal.classList.remove("opacity-0");
+    modalContent.classList.remove("scale-95");
+  }, 10);
 }
 
 async function loadAbout() {
