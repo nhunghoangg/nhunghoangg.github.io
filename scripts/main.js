@@ -283,8 +283,8 @@ async function loadAbout() {
     featuresContainer.innerHTML = data.features
       .map(
         (feature) =>
-          `<div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-secondary">${feature.icon}</span>
+          `<div class="flex items-center gap-3 about-feature">
+                <span class="material-symbols-outlined text-secondary about-feature-icon">${feature.icon}</span>
                 <span class="font-display font-medium">${feature.text}</span>
             </div>`
       )
