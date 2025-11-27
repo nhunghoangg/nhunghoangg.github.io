@@ -51,6 +51,20 @@ html {
   opacity: 1;
 }
 
+.mobile-menu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu.open {
+  max-height: 360px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Hero section animations */
 .hero-title-animated {
   background: linear-gradient(120deg, var(--color-primary), var(--color-secondary));

@@ -24,6 +24,39 @@ function observeSections() {
   });
 }
 
+function setupMobileMenu() {
+  const toggleBtn = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  if (!toggleBtn || !menu) return;
+
+  const icon = toggleBtn.querySelector(".material-symbols-outlined");
+
+  const closeMenu = () => {
+    menu.classList.remove("open");
+    toggleBtn.setAttribute("aria-expanded", "false");
+    if (icon) icon.textContent = "menu";
+  };
+
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("open");
+    toggleBtn.setAttribute("aria-expanded", String(isOpen));
+    if (icon) icon.textContent = isOpen ? "close" : "menu";
+  });
+
+  menu.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target instanceof HTMLElement && target.tagName.toLowerCase() === "a") {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+      closeMenu();
+    }
+  });
+}
+
 async function fetchData(file) {
   try {
     const response = await fetch(`data/${file}`);
@@ -45,12 +78,24 @@ async function loadCommon() {
   const footerText = document.getElementById("footer-text");
   if (footerText) footerText.textContent = data.footer;
 
+  const navMarkup = data.nav
+    .map(
+      (link) =>
+        `<a class="font-display text-sm font-medium hover:text-primary transition-colors duration-300" href="${link.href}">${link.label}</a>`
+    )
+    .join("");
+
   const navContainer = document.getElementById("nav-links");
   if (navContainer) {
-    navContainer.innerHTML = data.nav
+    navContainer.innerHTML = navMarkup;
+  }
+
+  const mobileNavContainer = document.getElementById("mobile-nav-links");
+  if (mobileNavContainer) {
+    mobileNavContainer.innerHTML = data.nav
       .map(
         (link) =>
-          `<a class="font-display text-sm font-medium hover:text-primary transition-colors duration-300" href="${link.href}">${link.label}</a>`
+          `<a class="font-display text-base font-medium rounded-lg px-3 py-2 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors duration-300" href="${link.href}">${link.label}</a>`
       )
       .join("");
   }
@@ -61,6 +106,15 @@ async function loadCommon() {
     const span = btn.querySelector("span");
     if (span) span.textContent = data.cta.label;
   });
+
+  const mobileCta = document.getElementById("mobile-nav-cta");
+  if (mobileCta) {
+    mobileCta.href = data.cta.href;
+    const span = mobileCta.querySelector("span");
+    if (span) span.textContent = data.cta.label;
+  }
+
+  setupMobileMenu();
 }
 
 async function loadHero() {

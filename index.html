@@ -66,11 +66,35 @@
               class="font-display text-lg font-bold text-primary tracking-tight"
             ></h2>
           </a>
+          <button
+            id="mobile-menu-toggle"
+            class="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 text-primary dark:border-gray-700 dark:text-text-dark md:hidden"
+            aria-label="Mở menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span class="material-symbols-outlined text-2xl">menu</span>
+          </button>
           <nav id="nav-links" class="hidden md:flex items-center gap-8">
             <!-- Nav links will be injected here -->
           </nav>
           <a
             class="nav-cta hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors duration-300 font-display"
+            href="#contact"
+          >
+            <span></span>
+          </a>
+        </div>
+        <div
+          id="mobile-menu"
+          class="mobile-menu md:hidden flex flex-col gap-4 px-4 sm:px-6 lg:px-8 pb-4 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-700"
+        >
+          <nav id="mobile-nav-links" class="flex flex-col gap-2">
+            <!-- Mobile nav links -->
+          </nav>
+          <a
+            id="mobile-nav-cta"
+            class="flex w-full items-center justify-center rounded-lg h-11 px-4 bg-primary text-white text-sm font-bold font-display btn-animated"
             href="#contact"
           >
             <span></span>
@@ -170,7 +194,7 @@
                   id="about-desc"
                   class="font-body text-lg text-text-light/90 dark:text-text-dark/90 leading-relaxed"
                 ></p>
-                <div id="about-features" class="grid grid-cols-2 gap-4">
+                <div id="about-features" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <!-- Features injected here -->
                 </div>
               </div>
