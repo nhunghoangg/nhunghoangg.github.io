@@ -67,11 +67,14 @@ html {
 
 /* Hero section animations */
 .hero-title-animated {
+  animation: hero-title-in 0.9s ease-out both;
+}
+
+.hero-title-name {
   background: linear-gradient(120deg, var(--color-primary), var(--color-secondary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: hero-title-in 0.9s ease-out both;
 }
 
 .hero-subtitle-animated {

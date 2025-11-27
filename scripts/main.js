@@ -122,7 +122,23 @@ async function loadHero() {
   if (!data) return;
 
   const title = document.getElementById("hero-title");
-  if (title) title.textContent = data.title;
+  if (title) {
+    const rawTitle = data.title || "";
+    const parts = rawTitle.split("–");
+    const namePart = parts[0] ? parts[0].trim() : "";
+    const taglinePart = parts.slice(1).join("–").trim();
+
+    if (namePart && taglinePart) {
+      title.innerHTML = `
+        <span class="hero-title-name">${namePart}</span>
+        <span class="block text-xl md:text-2xl lg:text-3xl font-medium text-text-light/80 dark:text-text-dark/70 mt-2">
+          ${taglinePart}
+        </span>
+      `;
+    } else {
+      title.textContent = rawTitle;
+    }
+  }
 
   const subtitle = document.getElementById("hero-subtitle");
   if (subtitle) subtitle.textContent = data.subtitle;

@@ -1,7 +1,7 @@
 {
   "title": "Về Tôi",
   "description": "Với hơn 10 năm kinh nghiệm, tôi cung cấp dịch vụ thu âm tiếng Việt chuyên nghiệp từ phòng thu tại gia đạt chuẩn phát sóng. Giọng đọc của tôi được biết đến với sự ấm áp, rõ ràng và chân thực, lý tưởng cho nhiều loại dự án. Tôi cam kết mang đến âm thanh chất lượng cao với thời gian hoàn thành nhanh chóng để giúp thông điệp của bạn lan tỏa đến khán giả.",
-  "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCCSHQNMi2UFddLgHIbLZldKQwAnImUja4Nuya_gg3quMB6zOiOtVojmOJ984WOEv9vnh_0eo4lKPsA75km_gcGFUHgedJCo6X2JBosFTNHSkKutKfehFMwboXyVDDMn_YBdhMdjaXqA-3vPEtG-qI4STRfHuOHbI8w0mLuVidc4Z696lW3hCjGNxGy2RRh7T3nxnXZNe1l4CW6seSPsKX8IEYFSx_RedEk_vIge-WcLdhMjRxKpWgg6t7w8DYxHLMQfaUWSnhPYaw",
+  "image": "assets/about_pic.png",
   "features": [
     { "icon": "record_voice_over", "text": "Giọng Ấm & Rõ" },
     { "icon": "mic_external_on", "text": "Chất Lượng Phòng Thu Pro" },
